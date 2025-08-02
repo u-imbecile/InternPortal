@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Leaderboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">Leaderboard</div>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+    </div>
+  </nav>
+
+  <main class="main-content-dashboard">
+    <div class="dashboard-box">
+      <h2>Top Interns</h2>
+      <ol id="leaderboard-list" class="reward-list"></ol>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-left">
+      <strong>About:</strong> SHE CAN FOUNDATION
+    </div>
+    <div class="footer-right">
+      © 2025 All rights reserved to Satyajeet
+    </div>
+  </footer>
+
+  <script>
+    fetch('http://localhost:3000/api/leaderboard')
+      .then(res => res.json())
+      .then(data => {
+        const list = document.getElementById('leaderboard-list');
+        data.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = `${item.name} — ₹${item.donations}`;
+          list.appendChild(li);
+        });
+      });
+  </script>
+</body>
+</html>

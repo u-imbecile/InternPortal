@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">Intern Dashboard</div>
+    <div class="nav-links">
+      <a href="index.html">Logout</a>
+    </div>
+  </nav>
+
+  <main class="main-content-dashboard">
+    <div class="dashboard-box">
+      <h2>Hello, <span id="intern-name">...</span></h2>
+      <p><strong>Referral Code:</strong> <span id="referral-code">...</span></p>
+      <p><strong>Total Donations Raised:</strong> ₹<span id="donation-amount">...</span></p>
+
+      <h3>Rewards / Unlockables</h3>
+      <ul id="reward-list" class="reward-list"></ul>
+
+      <a href="leaderboard.html"><button class="leaderboard-btn">View Leaderboard</button></a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-left">
+      <strong>About:</strong> SHE CAN FOUNDATION
+    </div>
+    <div class="footer-right">
+      © 2025 All rights reserved to Satyajeet
+    </div>
+  </footer>
+
+  <script>
+    fetch('http://localhost:3000/api/user')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('intern-name').textContent = data.name;
+        document.getElementById('referral-code').textContent = data.referralCode;
+        document.getElementById('donation-amount').textContent = data.donationsRaised;
+        const rewards = document.getElementById('reward-list');
+        data.rewards.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = `✔️ ${item}`;
+          rewards.appendChild(li);
+        });
+      });
+  </script>
+</body>
+</html>
