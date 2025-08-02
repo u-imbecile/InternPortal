@@ -43,6 +43,7 @@ Pass the following commands in the terminal(use VStudio for easy use)
 - npm install express cors
 (ENTER)
 - node server.js
+(ENTER)
 
 **Now run the frontend and check the output with my screenshots**
 
