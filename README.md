@@ -39,7 +39,7 @@ Pass the following commands in the terminal(use VStudio for easy use)
 - cd backend
 (ENTER)
 - npm init -y
-- (ENTER)
+(ENTER)
 - npm install express cors
 (ENTER)
 - node server.js
