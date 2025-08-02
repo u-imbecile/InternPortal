@@ -5,7 +5,7 @@ It's a sample for Login dashboard for SHE CAN FOUNDATION
 
 - Dummy Login Page (no authentication)
 - Dashboard showing intern name, referral code, donation stats, and rewards
-- Leaderboard (optional bonus)
+- Leaderboard
 - Responsive design (mobile/tablet/desktop friendly)
 - Backend REST API to serve user and leaderboard data
 
