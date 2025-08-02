@@ -36,15 +36,15 @@ intern/
 ## After Making All The Files
 
 Pass the following commands in the terminal(use VStudio for easy use)
-cd backend
+- cd backend
 (ENTER)
-npm init -y
+- npm init -y
+- (ENTER)
+- npm install express cors
 (ENTER)
-npm install express cors
-(ENTER)
-node server.js
+- node server.js
 
-**Now rud the frontend and check the output with my screenshots**
+**Now run the frontend and check the output with my screenshots**
 
-**The uploaded files are not strucured so out the files in the respected folders**
+**The uploaded files are not strucured so put the files in the respected folders**
 
